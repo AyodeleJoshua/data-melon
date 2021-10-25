@@ -4,13 +4,15 @@ import axios from 'axios';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 
-import EnhancedTable from './components/EnhancedTable';
+import EnhancedTable from './components/FullDataTable';
 import BarChartByYear from './components/BarChartByYear';
 import PieChartByYear from './components/PieChartByYear';
 import LineChartByYear from './components/LineChartByYear';
 import BarChartByCategory from './components/BarChartByCategory';
 import PieChartByCategory from './components/PieChartByCategory';
 import LineChartByCategory from './components/LineChartByCategory';
+import TableYear from './components/TableYear';
+import TableCategory from './components/TableCategory';
 import './App.css';
 
 const URL = 'https://g54qw205uk.execute-api.eu-west-1.amazonaws.com/DEV/stub';
@@ -172,24 +174,37 @@ function App() {
 				productSalesByYear['2017'][e['Product Name']].profit = profit;
 			}
 		});
-
-		console.log(productSalesByYear);
 	}
 	return (
 		<React.Fragment>
 			<CssBaseline />
-			<Container maxWidth='lg'>
+			<Container maxWidth='xl'>
 				<div className='charts'>
-					<div className='year'>
-						<BarChartByYear data={StateSalesByYear} />
-						<PieChartByYear data={StateSalesByYear} />
-						<LineChartByYear data={StateSalesByYear} />
+					<div className='d-flex justify-content-between mb-2 align-center'>
+						<div className='chart wd-30 pt-5'>
+							<BarChartByYear data={StateSalesByYear} />
+						</div>
+
+						<div className='table wd-50 h-auto'>
+							<TableYear data={StateSalesByYear} />
+						</div>
+					</div>
+					<div className='d-flex justify-content-between mb-8 align-center'>
+						<PieChartByYear data={StateSalesByYear} className='wd-30' />
+						<LineChartByYear data={StateSalesByYear} className='wd-50' />
 					</div>
 					{data.length > 0 ? (
 						<div className='category'>
-							<BarChartByCategory data={categorySalesByYear} />
-							<PieChartByCategory data={categorySalesByYear} />
-							<LineChartByCategory data={categorySalesByYear} />
+							<div className='d-flex justify-content-between mb-2 align-center'>
+								<div>
+									<BarChartByCategory data={categorySalesByYear} />
+									<PieChartByCategory data={categorySalesByYear} />
+									<LineChartByCategory data={categorySalesByYear} />
+								</div>
+								<div>
+									<TableCategory data={categorySalesByYear} />
+								</div>
+							</div>
 						</div>
 					) : null}
 				</div>
