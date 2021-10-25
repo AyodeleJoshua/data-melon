@@ -2,7 +2,7 @@ import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
+import TableContainer, { getTableContainerUtilityClass } from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
@@ -90,8 +90,8 @@ export default function TableCategory({ data }) {
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell align='right'>Sales</TableCell>
-							<TableCell align='right'>Profit</TableCell>
+							<TableCell>Sales</TableCell>
+							<TableCell>Profit</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -100,10 +100,10 @@ export default function TableCategory({ data }) {
 								key={row.id}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 							>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.sales, 2)}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.profit, 2)}
 								</TableCell>
 							</TableRow>
@@ -117,8 +117,8 @@ export default function TableCategory({ data }) {
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell align='right'>Sales</TableCell>
-							<TableCell align='right'>Profit</TableCell>
+							<TableCell>Sales</TableCell>
+							<getTableContainerUtilityClass>Profit</getTableContainerUtilityClass>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -127,10 +127,10 @@ export default function TableCategory({ data }) {
 								key={row.id}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 							>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.sales, 2)}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.profit, 2)}
 								</TableCell>
 							</TableRow>
@@ -144,8 +144,8 @@ export default function TableCategory({ data }) {
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell align='right'>Sales</TableCell>
-							<TableCell align='right'>Profit</TableCell>
+							<TableCell>Sales</TableCell>
+							<TableCell>Profit</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -154,10 +154,10 @@ export default function TableCategory({ data }) {
 								key={row.id}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 							>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.sales, 2)}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.profit, 2)}
 								</TableCell>
 							</TableRow>
@@ -171,8 +171,8 @@ export default function TableCategory({ data }) {
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell align='right'>Sales</TableCell>
-							<TableCell align='right'>Profit</TableCell>
+							<TableCell>Sales</TableCell>
+							<TableCell>Profit</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -181,10 +181,10 @@ export default function TableCategory({ data }) {
 								key={row.id}
 								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 							>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.sales, 2)}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.profit, 2)}
 								</TableCell>
 							</TableRow>

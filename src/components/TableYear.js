@@ -49,8 +49,8 @@ export default function TableYear({ data }) {
 					<TableHead>
 						<TableRow>
 							<TableCell>Year</TableCell>
-							<TableCell align='right'>Sales</TableCell>
-							<TableCell align='right'>Profit</TableCell>
+							<TableCell>Sales</TableCell>
+							<TableCell>Profit</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -62,10 +62,10 @@ export default function TableYear({ data }) {
 								<TableCell component='th' scope='row'>
 									{row.year}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.sales, 2)}
 								</TableCell>
-								<TableCell align='right'>
+								<TableCell>
 									{decimalPlace(row.profit, 2)}
 								</TableCell>
 							</TableRow>

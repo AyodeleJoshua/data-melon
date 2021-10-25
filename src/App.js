@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import Skeleton from '@mui/material/Skeleton';
 import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
 
 import EnhancedTable from './components/FullDataTable';
 import BarChartByYear from './components/BarChartByYear';
@@ -178,9 +177,9 @@ function App() {
 	return (
 		<React.Fragment>
 			<CssBaseline />
-			<Container maxWidth='xl'>
+			<div className="container" >
 				<div className='charts'>
-					<div className='d-flex justify-content-between mb-2 align-center'>
+					<div className='d-md-flex justify-content-between align-center'>
 						<div className='chart wd-30 pt-5'>
 							<BarChartByYear data={StateSalesByYear} />
 						</div>
@@ -189,13 +188,13 @@ function App() {
 							<TableYear data={StateSalesByYear} />
 						</div>
 					</div>
-					<div className='d-flex justify-content-between mb-8 align-center'>
+					<div className='d-md-flex justify-content-between align-center'>
 						<PieChartByYear data={StateSalesByYear} className='wd-30' />
 						<LineChartByYear data={StateSalesByYear} className='wd-50' />
 					</div>
 					{data.length > 0 ? (
 						<div className='category'>
-							<div className='d-flex justify-content-between mb-2 align-center'>
+							<div className='d-md-flex justify-content-between align-center'>
 								<div>
 									<BarChartByCategory data={categorySalesByYear} />
 									<PieChartByCategory data={categorySalesByYear} />
@@ -211,7 +210,7 @@ function App() {
 				<div className='tables'>
 					<EnhancedTable tableData={data} />
 				</div>
-			</Container>
+			</div>
 		</React.Fragment>
 	);
 }
