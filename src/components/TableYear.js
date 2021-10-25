@@ -41,10 +41,10 @@ export default function TableYear({ data }) {
 	];
 	return (
 		<div>
-			<Typography variant='h4'>
+			<Typography variant='h4' className="mb-md-5">
 				Table showing Year vs Sales vs Profit
 			</Typography>
-			<TableContainer component={Paper}>
+			<TableContainer component={Paper} className="mt-md-4">
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>

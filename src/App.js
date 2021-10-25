@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import Skeleton from '@mui/material/Skeleton';
 import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import EnhancedTable from './components/FullDataTable';
 import BarChartByYear from './components/BarChartByYear';
@@ -12,7 +14,6 @@ import PieChartByCategory from './components/PieChartByCategory';
 import LineChartByCategory from './components/LineChartByCategory';
 import TableYear from './components/TableYear';
 import TableCategory from './components/TableCategory';
-import './App.css';
 
 const URL = 'https://g54qw205uk.execute-api.eu-west-1.amazonaws.com/DEV/stub';
 
@@ -177,39 +178,66 @@ function App() {
 	return (
 		<React.Fragment>
 			<CssBaseline />
-			<div className="container" >
-				<div className='charts'>
-					<div className='d-md-flex justify-content-between align-center'>
-						<div className='chart wd-30 pt-5'>
-							<BarChartByYear data={StateSalesByYear} />
-						</div>
-
-						<div className='table wd-50 h-auto'>
-							<TableYear data={StateSalesByYear} />
-						</div>
-					</div>
-					<div className='d-md-flex justify-content-between align-center'>
-						<PieChartByYear data={StateSalesByYear} className='wd-30' />
-						<LineChartByYear data={StateSalesByYear} className='wd-50' />
-					</div>
-					{data.length > 0 ? (
-						<div className='category'>
-							<div className='d-md-flex justify-content-between align-center'>
-								<div>
-									<BarChartByCategory data={categorySalesByYear} />
-									<PieChartByCategory data={categorySalesByYear} />
-									<LineChartByCategory data={categorySalesByYear} />
+			<div className='container mt-md-5'>
+				{data.length > 0 ? (
+					<div>
+						<div className='charts'>
+							<div className='d-md-flex justify-content-between'>
+								<div className='col-md-5'>
+									<BarChartByYear data={StateSalesByYear} />
 								</div>
-								<div>
-									<TableCategory data={categorySalesByYear} />
+
+								<div className=''>
+									<TableYear data={StateSalesByYear} />
+								</div>
+							</div>
+							<div className='d-md-flex justify-content-between align-items-center mt-md-5 mb-md-5'>
+								<div className='col-md-5'>
+									<PieChartByYear data={StateSalesByYear} />
+								</div>
+								<div className='col-md-6'>
+									<LineChartByYear
+										data={StateSalesByYear}
+										className='col-md-5'
+									/>
+								</div>
+							</div>
+
+							<div className='category'>
+								<div className='d-md-flex justify-content-between'>
+									<div className='col-md-5'>
+										<Typography variant='h4' className='mb-md-4'>
+											Charts by Category
+										</Typography>
+										<BarChartByCategory data={categorySalesByYear} />
+										<PieChartByCategory data={categorySalesByYear} />
+										<LineChartByCategory data={categorySalesByYear} />
+									</div>
+									<div className='col-md-6'>
+										<TableCategory data={categorySalesByYear} />
+									</div>
 								</div>
 							</div>
 						</div>
-					) : null}
-				</div>
-				<div className='tables'>
-					<EnhancedTable tableData={data} />
-				</div>
+						<div className='tables'>
+							<EnhancedTable tableData={data} />
+						</div>
+					</div>
+				) : (
+					<div
+						className='d-flex justify-content-center align-items-center'
+						style={{ height: '70vh' }}
+					>
+						<Stack spacing={1}>
+							<Typography variant='h5' style={{ color: 'rgba(0, 0, 0,0.6)' }}>
+								Please wait while your analyst is setting up...
+							</Typography>
+							<Skeleton variant='text' />
+							<Skeleton variant='circular' width={40} height={40} />
+							<Skeleton variant='rectangular' width={210} height={118} />
+						</Stack>
+					</div>
+				)}
 			</div>
 		</React.Fragment>
 	);

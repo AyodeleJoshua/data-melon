@@ -84,8 +84,8 @@ export default function TableCategory({ data }) {
 	// console.log(data);
 	return (
 		<div>
-			<Typography variant='h4'> Category vs year </Typography>
-			<Typography variant='h6'> 2014 </Typography>
+			<Typography variant='h4' className='mb-md-4'> Category vs year </Typography>
+			<Typography variant='h5' className='mb-md-2'> 2014 </Typography>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
@@ -112,7 +112,7 @@ export default function TableCategory({ data }) {
 				</Table>
 			</TableContainer>
 			
-			<Typography variant='h6'> 2015 </Typography>
+			<Typography variant='h5' className='mt-md-5'> 2015 </Typography>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
@@ -139,7 +139,7 @@ export default function TableCategory({ data }) {
 				</Table>
 			</TableContainer>
 
-			<Typography variant='h6'> 2016 </Typography>
+			<Typography variant='h6' className='mt-md-5'> 2016 </Typography>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
@@ -166,7 +166,7 @@ export default function TableCategory({ data }) {
 				</Table>
 			</TableContainer>
 
-			<Typography variant='h6'> 2017 </Typography>
+			<Typography variant='h6' className='mt-md-5'> 2017 </Typography>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>

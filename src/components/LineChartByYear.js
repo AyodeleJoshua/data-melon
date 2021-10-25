@@ -4,7 +4,9 @@ import Typography from '@mui/material/Typography';
 const LineChart = ({ data }) => {
 	return (
 		<div>
-			<Typography variant='h4'> Line Series showing Year vs Sales </Typography>
+			<Typography variant='h4' className='mb-md-4'>
+				Line Series showing Year vs Sales
+			</Typography>
 			<div>
 				<Line
 					data={{

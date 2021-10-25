@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 const BarChart = ({ data }) => {
 	return (
 		<div>
-			<Typography variant='h4'> Bar Chart showing Year vs Sales </Typography>
+			<Typography variant='h4' className="mb-md-4"> Bar Chart showing Year vs Sales </Typography>
 			<div>
 				<Bar
 					data={{

@@ -4,7 +4,9 @@ import Typography from '@mui/material/Typography';
 const PieChart = ({ data }) => {
 	return (
 		<div>
-			<Typography variant='h4'> Pie Chart showing Year vs Sales </Typography>
+			<Typography variant='h4' className='mb-md-4'>
+				Pie Chart showing Year vs Sales
+			</Typography>
 			<div>
 				<Pie
 					data={{
